@@ -8,11 +8,8 @@
           <li><%= link_to 'Add Pet', new_pet_path %></li>
         <% else %>
           <li><%=link_to 'Sign-In', new_user_session_path %></li>
+          <li><%=link_to 'Create Account', new_user_registration_path %></li>
         <% end %>
-      </div>
-
-      <div class="col s4 push-right">
-        <li><%=link_to 'Create Account', new_user_registration_path %></li>
       </div>
     </ul>
   </div>

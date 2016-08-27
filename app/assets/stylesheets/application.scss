@@ -1,11 +1,21 @@
 @import 'materialize';
 
-
-#topnav {
+nav {
   background-color: white;
-
 }
-#topnav a {
+nav .brand-logo,
+nav ul a {
   color: #000;
-  text-align: right;
+}
+.thin-row {
+  height: 300px;
+}
+.bg-img {
+  background-image: url('cat4.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: auto;
+}
+.clear-opacity {
+    background: rgba(255, 255, 255, 0.65);
 }
