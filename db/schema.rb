@@ -39,9 +39,11 @@ ActiveRecord::Schema.define(version: 20160827194423) do
     t.text     "comment"
     t.string   "rating"
     t.integer  "pet_id"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["pet_id"], name: "index_reviews_on_pet_id", using: :btree
+    t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -67,4 +69,5 @@ ActiveRecord::Schema.define(version: 20160827194423) do
 
   add_foreign_key "pets", "users"
   add_foreign_key "reviews", "pets"
+  add_foreign_key "reviews", "users"
 end

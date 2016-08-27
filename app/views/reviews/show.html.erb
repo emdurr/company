@@ -26,9 +26,9 @@
 
 <div class="primary-footer">
   <%= link_to 'Edit comment',  edit_pet_review_path(@pet, @review), class:"waves-effect waves-light btn" %>
-<% else %>
+
   <%= link_to 'Add comment', new_pet_review_address_path(@pet, @review) %>
-<% end %>
+
 
 | <%= link_to 'Edit comment', edit_pet_review_path(@pet, @review), class:"waves-effect waves-light btn"  %> |
 </div>

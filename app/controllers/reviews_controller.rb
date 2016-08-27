@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-  	@review = Review.new(review_params)
+  	@review = current_user.reviews.new(review_params)
     @review[:pet_id] = params[:pet_id]
   	if @review.save 
   		redirect_to pet_path(@pet)
@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    
+
   end
 
   def edit
@@ -48,6 +48,6 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-  	params.require(:review).permit(:comment, :rating, :pet_id)
+  	params.require(:review).permit(:comment, :rating, :pet_id, :user_id)
   end
 end

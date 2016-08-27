@@ -1,4 +1,5 @@
 class Review < ApplicationRecord
+  belongs_to :user
   belongs_to :pet
-  validates :comment, presence: true
-end
+  validates_presence_of :comment
+ end

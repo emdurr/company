@@ -4,6 +4,7 @@ class CreateReviews < ActiveRecord::Migration[5.0]
       t.text :comment
       t.string :rating
       t.belongs_to :pet, foreign_key: true
+      t.belongs_to :user, foreign_key: true
 
       t.timestamps
     end
