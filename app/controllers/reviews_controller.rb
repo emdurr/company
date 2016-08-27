@@ -34,6 +34,7 @@ class ReviewsController < ApplicationController
 
   def destroy
 		if @review.destroy
+      flash[:alert] = "Erros: #{@review.errors.full_messages.to_sentence}"
 		redirect_to pet_path(@pet)
     end
   end
