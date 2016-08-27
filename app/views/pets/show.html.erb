@@ -26,7 +26,7 @@
 </table>
 
 <p>Reviews:</p>
-		<%= link_to 'Add review', new_pet_review_path(@pet) %>
+		<%= link_to 'Add review', new_pet_review_path(@pet), class:"pink-text text-lighten-2" %>
 		<% if @pet.reviews.any? %>
 			<% @pet.reviews.each do |review| %>
 			<ul>
@@ -46,4 +46,8 @@
 <%= link_to 'Remove your pet', pet_path(@pet), method: :delete %> ||
 <%= link_to 'All pets', pets_path %> ||
 <%= link_to 'Home', root_path %>
+<<<<<<< db789a08689fcfa30a932bff233d388bef4cae03
 
+=======
+<%= link_to "All reviews", pet_review_path(@pet) %>
+>>>>>>> yes

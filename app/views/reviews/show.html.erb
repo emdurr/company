@@ -1,4 +1,23 @@
 
+<div class="hero">
+  <nav>
+    <div class="nav-wrapper">
+      <div class="col s12">
+        <a href= <%=pets_path %> class="breadcrumb">All items</a>
+        <a href= <%=pet_path(@list) %> class="breadcrumb">Second</a>
+        <a href= <%=pet_review_path %> class="breadcrumb">Third</a>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+
+
+
+
 
 <h1><%= @review.comments %></h1>
 <h4><%= @review.category %></h4>
@@ -6,15 +25,15 @@
 
 
 <div class="primary-footer">
-  <%= link_to 'Edit List', edit_pet_review_path(@pet, @review), class:"waves-effect waves-light btn" %>
+  <%= link_to 'Edit comment',  edit_pet_review_path(@pet, @review), class:"waves-effect waves-light btn" %>
 <% else %>
-  <%= link_to 'Add item', new_pet_review_address_path(@pet, @review) %>
+  <%= link_to 'Add comment', new_pet_review_address_path(@pet, @review) %>
 <% end %>
 
-| <%= link_to 'Edit item', edit_pet_review_path(@pet, @review), class:"waves-effect waves-light btn"  %> |
+| <%= link_to 'Edit comment', edit_pet_review_path(@pet, @review), class:"waves-effect waves-light btn"  %> |
 </div>
 
-<%= link_to 'Delete list', pet_review_path(@pet, @review), method: :delete, data: {confirm: 'Really Delete?'}, class:"waves-effect waves-light btn" %>
+<%= link_to 'Delete comment', pet_review_path(@pet, @review), method: :delete, data: {confirm: 'Really Delete?'}, class:"waves-effect waves-light btn" %>
 <br />
-<%= link_to 'Back to list', pet_path(@list), class:"waves-effect waves-light btn"  %>
+<%= link_to 'Back to comments', pet_path(@list), class:"waves-effect waves-light btn"  %>
 </div> 
