@@ -6,7 +6,7 @@
 				<%= f.text_field :name %>
 				<br>
 				<%= f.label :species %>
-				<%= f.text_field :species %>
+				<%= f.select :species, ['Dog', 'Cat'], {}, class: 'browser-default' %>
 				<br>
 				<div>
 					<%= f.label :breed %>
@@ -22,7 +22,7 @@
 				</div>
 				<div>
 					<%= f.label :gender %>
-					<%= f.text_field :gender %>
+					<%= f.select :gender, ['male', 'female'], {}, class: 'browser-default' %>
 				</div>
 				<div>
 					<%= f.label :age %>
