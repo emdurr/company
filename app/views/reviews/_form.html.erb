@@ -11,10 +11,7 @@
 	<%= f.text_field :comment %>
 <br />
 	<%= f.label :rating %>
-	<%= f.select :rating, ('*', '**', '***', '****', '*****') %>
-<br />
-<%= f.label :pet_id %>
-	<%= f.integer :pet_id %>
+	<%= f.select :rating, ['*', '**', '***', '****', '*****'] %>
 <br />
 	<%= f.submit %>
 <% end %>

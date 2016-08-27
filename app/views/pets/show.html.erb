@@ -25,8 +25,25 @@
 	</tbody>
 </table>
 
+<p>Reviews:</p>
+		<%= link_to 'Add review', new_pet_review_path(@pet) %>
+		<% if @pet.reviews.any? %>
+			<% @pet.reviews.each do |review| %>
+			<ul>
+
+				<li><%= review.rating %> <br><%= review.comment %></li><br>
+					<% if (current_user.id == @pet.user_id || comment.user_id) %>
+						<%= link_to 'Delete Comment',
+						pet_review_path(@pet ,review), method: :delete, class:'btn' %>
+					<%end%>
+			</ul>
+			<%end%>
+		<% else %>
+			<p>No reviews yet</p>
+		<% end %>
+
 <%= link_to 'Edit your pet', edit_pet_path(@pet) %> ||
 <%= link_to 'Remove your pet', pet_path(@pet), method: :delete %> ||
 <%= link_to 'All pets', pets_path %> ||
 <%= link_to 'Home', root_path %>
-<%= link_to "All comments", pets_reviews_path(@pets) %>
+
