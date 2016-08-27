@@ -2,7 +2,7 @@
 <div>
   <div>
     <% @pets.each do |pet| %>
-      <%= link_to pet.name, pet_path %>
+      <%= link_to pet.name, pet_path(pet) %>
     <% end %>
   </div>
 </div>

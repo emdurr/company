@@ -9,16 +9,18 @@
 			<th>Gender</th>
 			<th>Age</th>
 			<th>Available</th>
+			<th>Profile</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
-			<td><=% @pet.breed %></td>
-			<td><=% @pet.fur_color %></td>
-			<td><=% @pet.fur_type %></td>
-			<td><=% @pet.gender %></td>
-			<td><=% @pet.age %></td>
-			<td><=% @pet.available %></td>
+			<td><%= @pet.breed %></td>
+			<td><%= @pet.fur_color %></td>
+			<td><%= @pet.fur_type %></td>
+			<td><%= @pet.gender %></td>
+			<td><%= @pet.age %></td>
+			<td><%= @pet.available %></td>
+			<td><%= @pet.profile %></td>
 		</tr>
 	</tbody>
 </table>
