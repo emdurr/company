@@ -26,6 +26,11 @@
 		</tr>
 	</tbody>
 </table>
+<div class="row">
+	<div class="col s12">
+		<p>Contact my owner at <%= @pet.user.phone_num %> to schedule some time with me</p>
+	</div>	
+</div>
 
 <p>Reviews:</p>
 		<%= link_to 'Add review', new_pet_review_path(@pet), class:"pink-text text-lighten-2" %>
