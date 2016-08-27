@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  fur_type: MyString
+  fur_color: MyString
+  gender: MyString
+  age: MyString
+  available: false
+  breed: MyString
+
+two:
+  type: 
+  fur_type: MyString
+  fur_color: MyString
+  gender: MyString
+  age: MyString
+  available: false
+  breed: MyString
