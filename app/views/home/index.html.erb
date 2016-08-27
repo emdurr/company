@@ -1,13 +1,21 @@
 <% if signed_in? %>
   <div class="row">
-    <div class="col s12">
-      <% current_user.pets.each do |pet| %>
-        <ul>
-          <li><%= link_to pet.name, pet_path(pet) %></li>
-        </ul>
-      <% end %>
+    <div class='col s12'>
+      <h4><%= current_user.first_name %> <%= current_user.last_name %></h4>
     </div>
     <div class="col s12">
+      <% if @pets.any? %>
+        <% current_user.pets.each do |pet| %>
+          <ul>
+            <li><%= link_to pet.name, pet_path(pet) %></li>
+          </ul>
+          <% end %>
+        <% else %>
+          <h5>You do not have any pets in your profile. <%= link_to 'Add Your Pets', new_pet_path %></h5>
+        <% end %>
+    </div>
+
+    <div class="col s12 padding-top">
       <div class="col s12 m6 pull-left">
         <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           Pellentesque facilisis in felis ut rutrum. In aliquet nisl sit amet magna
@@ -21,7 +29,7 @@
         <%= image_tag "cutest-dog.jpeg", class: 'responsive-img rounded-border' %>
       </div>
       <div class="col s12">
-        <h5>Pets</h5>
+        <h5>View The Pets You Can Borrow</h5>
         <% @pets.each do |pet| %>
           <ul>
             <li><%= link_to pet.name, pet_path(pet) %></li>
@@ -33,7 +41,7 @@
   <div class="row space">
     <div class="col s12 m5 offset-m7">
       <p class="white-text flow-text right-align">You need their <strong>company</strong>. On vacation, too selfish to own a pet
-                                                                    but want their love, or sad and lonely. Barrow
+                                                                    but want their love, or sad and lonely. Borrow
                                                                     a pet for an hour or a day.</p>
     </div>
 
