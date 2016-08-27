@@ -12,6 +12,12 @@
 
   <body>
     <%= render 'layouts/topnav' %>
+    <% if !signed_in? %>
+        <div class="col s12">
+          <%=image_tag("cat4.jpeg", alt: "Cuddling Cat", class: 'responsive-img')%>
+        </div>
+
+    <% end %>
     <div class="container">
     <%= yield %>
     </div>
