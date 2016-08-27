@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+	root 'home#index'
 
-  root 'home#index'
+	resources :pets do 
+		resources :reviews
+	end
+		resources :users
 
   devise_for :users, controllers: {
     registrations: 'users/registrations'
