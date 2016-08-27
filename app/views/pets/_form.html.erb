@@ -5,8 +5,8 @@
 				<%= f.label :name %>
 				<%= f.text_field :name %>
 				<br>
-				<%= f.label :type %>
-				<%= f.select :type, ['Dog', 'Cat'] %>
+				<%= f.label :species %>
+				<%= f.text_field :species %>
 				<br>
 				<div>
 					<%= f.label :breed %>
@@ -14,7 +14,7 @@
 				</div>
 				<div>
 					<%= f.label :fur_type %>
-					<%= f.select :fur_type, ['long', 'short'] %>
+					<%= f.text_field :fur_type %>
 				</div>
 				<div>
 					<%= f.label :fur_color %>

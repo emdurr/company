@@ -1,6 +1,6 @@
 class PetsController < ApplicationController
 	before_action require: :user
-	before_action find_pet:, except: [:index, :new, :create]
+	before_action :find_pet, except: [:index, :new, :create]
   def index
   	@pets = Pet.all
   end
@@ -19,6 +19,7 @@ class PetsController < ApplicationController
   		redirect_to pet_path(@pet)
   	else
   		render :new
+    end
   end
 
   def edit
@@ -29,6 +30,7 @@ class PetsController < ApplicationController
   		redirect_to pet_path(@pet)
   	else
   		render :edit
+    end
   end
 
   def destroy
@@ -39,7 +41,7 @@ class PetsController < ApplicationController
   private
 
   	def pet_params
-  		params.require(:pet).permit(:name, :profile, :type, :fur_type, :fur_color, :gender, :age, :available, :breed, :user_id)
+  		params.require(:pet).permit(:name, :profile, :species, :fur_type, :fur_color, :gender, :age, :available, :breed, :user_id)
   	end
 
   	def find_pet
