@@ -11,7 +11,7 @@
 	<%= f.text_field :comment %>
 <br />
 	<%= f.label :rating %>
-	<%= f.select :rating, ['*', '**', '***', '****', '*****'] %>
+	<%= f.select :rating, ['*', '**', '***', '****', '*****'], {}, class: 'browser-default' %>
 <br />
 	<%= f.submit %>
 <% end %>

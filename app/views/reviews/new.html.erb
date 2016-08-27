@@ -1,9 +1,9 @@
-<h1>new review</h1>
+<h1 class="card-panel"><new review <span class:"indigo-text text-darken-4"> </span> </h1>
 
 <%= render(partial: 'form') %>
 
-<%= link_to 'Back', pet_path(@pet) %> ||
+<%= link_to 'Back', pet_path(@pet), class:"green-text text-darken-4" %> ||
 
-<%= link_to "Show review", pet_path(@pet) %> ||
+<%= link_to "Show review", pet_path(@pet), class:"green-text text-darken-4" %> ||
 
-<%= link_to 'All pets', pets_path %> ||
+<%= link_to 'All pets', pets_path, class:"green-text text-darken-4" %> ||

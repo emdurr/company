@@ -33,8 +33,9 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-		@review.destroy
+		if @review.destroy
 		redirect_to pet_path(@pet)
+    end
   end
 
   private
