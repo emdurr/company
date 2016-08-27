@@ -6,6 +6,10 @@
         <% if signed_in? %>
           <li><%= link_to 'Sign-Out', destroy_user_session_path, method: :delete %></li>
           <li><%= link_to 'Add Pet', new_pet_path %></li>
+          <li><%= form_tag(pets_path, :method => 'get', id: "search_form") do  %>
+            <%= text_field_tag :search, params[:search], placeholder: "Search Pet" %>
+            <%= submit_tag "Search", :name => nil, :class => 'btn' %>
+          <% end %></li>
         <% else %>
           <li><%=link_to 'Sign-In', new_user_session_path %></li>
           <li><%=link_to 'Create Account', new_user_registration_path %></li>

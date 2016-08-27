@@ -34,7 +34,7 @@
 			<ul>
 
 				<li><%= review.rating %> <br><%= review.comment %></li><br>
-					<% if (current_user.id == @pet.user_id || comment.user_id) %>
+					<% if (current_user.id == @pet.user_id || review.user_id) %>
 						<%= link_to 'Delete Comment',
 						pet_review_path(@pet ,review), method: :delete, class:'btn' %><br>
 						<%= link_to 'Edit Comment', edit_pet_review_path(@pet, review), class: 'btn' %>
@@ -49,8 +49,3 @@
 <%= link_to 'Remove your pet', pet_path(@pet), method: :delete %> ||
 <%= link_to 'All pets', pets_path %> ||
 <%= link_to 'Home', root_path %>
-<<<<<<< db789a08689fcfa30a932bff233d388bef4cae03
-
-=======
-<%= link_to "All reviews", pet_review_path(@pet) %>
->>>>>>> yes

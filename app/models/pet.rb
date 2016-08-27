@@ -5,6 +5,6 @@ class Pet < ApplicationRecord
 	validates_attachment :image, content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
 
 	def self.search(search)
-  	where("name ILIKE ? OR breed ILIKE ?", "%#{search}%", "%#{search}%")
+  	where("name ILIKE ? OR breed ILIKE ? OR species ILIKE ? ", "%#{search}%", "%#{search}%", "%#{search}%")
   end
 end

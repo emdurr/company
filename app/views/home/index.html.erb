@@ -1,11 +1,12 @@
 <% if signed_in? %>
   <div class="row">
     <div class="col s12">
-      <% @pets.each do |pet| %>
-        <%= link_to pet.name, pet_path(pet) %>
+      <% current_user.pets.each do |pet| %>
+        <ul>
+          <li><%= link_to pet.name, pet_path(pet) %></li>
+        </ul>
       <% end %>
     </div>
-
     <div class="col s12">
       <div class="col s12 m6 pull-left">
         <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -18,6 +19,13 @@
 
       <div class="col s12 m6 pull-left">
         <%= image_tag "cutest-dog.jpeg", class: 'responsive-img' %>
+      </div>
+      <div class="col s12">
+        <% @pets.each do |pet| %>
+          <ul>
+            <li><%= link_to pet.name, pet_path(pet) %></li>
+          </ul>
+        <% end %>
       </div>
     </div>
 <% end %>
