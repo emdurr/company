@@ -1,5 +1,7 @@
 <h1><%= @pet.name %> </h1>
-
+<% if @pet.image.file? %>
+  <p><%= image_tag @pet.image.url(:large) %></p>
+<% end %>
 <table>
 	<thead>
 		<tr>
@@ -34,7 +36,8 @@
 				<li><%= review.rating %> <br><%= review.comment %></li><br>
 					<% if (current_user.id == @pet.user_id || comment.user_id) %>
 						<%= link_to 'Delete Comment',
-						pet_review_path(@pet ,review), method: :delete, class:'btn' %>
+						pet_review_path(@pet ,review), method: :delete, class:'btn' %><br>
+						<%= link_to 'Edit Comment', edit_pet_review_path(@pet, review), class: 'btn' %>
 					<%end%>
 			</ul>
 			<%end%>

@@ -3,6 +3,11 @@ class PetsController < ApplicationController
 	before_action :find_pet, except: [:index, :new, :create]
   def index
   	@pets = Pet.all
+    if params[:search]
+      @pets = Pet.search(params[:search])
+    else
+      @pets = Pet.all
+    end
   end
 
   def show
@@ -41,7 +46,7 @@ class PetsController < ApplicationController
   private
 
   	def pet_params
-  		params.require(:pet).permit(:name, :profile, :species, :fur_type, :fur_color, :gender, :age, :available, :breed, :user_id)
+  		params.require(:pet).permit(:name, :profile, :species, :fur_type, :fur_color, :gender, :age, :available, :breed, :image, :user_id)
   	end
 
   	def find_pet
