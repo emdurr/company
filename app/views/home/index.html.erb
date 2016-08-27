@@ -1,4 +1,4 @@
-
+<% if signed_in? %>
   <div class="row">
     <div class="col s12">
       <% @pets.each do |pet| %>
@@ -20,3 +20,4 @@
         <%= image_tag "cutest-dog.jpeg", class: 'responsive-img' %>
       </div>
     </div>
+<% end %>
