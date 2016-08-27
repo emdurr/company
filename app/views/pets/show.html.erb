@@ -1,2 +1,29 @@
-<h1>Pets#show</h1>
-<p>Find me in app/views/pets/show.html.erb</p>
+<h1><%= @pet.name %> </h1>
+
+<table>
+	<thead>
+		<tr>
+			<th>Breed</th>
+			<th>Color</th>
+			<th>Fur Type</th>
+			<th>Gender</th>
+			<th>Age</th>
+			<th>Available</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><=% @pet.breed %></td>
+			<td><=% @pet.fur_color %></td>
+			<td><=% @pet.fur_type %></td>
+			<td><=% @pet.gender %></td>
+			<td><=% @pet.age %></td>
+			<td><=% @pet.available %></td>
+		</tr>
+	</tbody>
+</table>
+
+<%= link_to 'Edit your pet', edit_pet_path(@pet) %> ||
+<%= link_to 'Remove your pet', pet_path(@pet), method: :delete %> ||
+<%= link_to 'All pets', pets_path %> ||
+<%= link_to 'Home', root_peth %>

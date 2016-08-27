@@ -1,2 +1,7 @@
-<h1>Pets#edit</h1>
-<p>Find me in app/views/pets/edit.html.erb</p>
+<h1>Edit your pet</h1>
+
+<%= render(partial: 'form') %>
+
+<%= link_to 'Your pet', pet_path(@pet) %> ||
+<%= link_to 'All pets', pets_path %> ||
+<%= link_to 'Home', root_peth %>
