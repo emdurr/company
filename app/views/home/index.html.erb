@@ -21,6 +21,7 @@
         <%= image_tag "cutest-dog.jpeg", class: 'responsive-img rounded-border' %>
       </div>
       <div class="col s12">
+        <h5>Pets</h5>
         <% @pets.each do |pet| %>
           <ul>
             <li><%= link_to pet.name, pet_path(pet) %></li>

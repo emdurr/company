@@ -2,7 +2,7 @@
 <% if @pet.image.file? %>
   <p><%= image_tag @pet.image.url(:large) %></p>
 <% end %>
-<table>
+<table class="responsive-table">
 	<thead>
 		<tr>
 			<th>Breed</th>
@@ -31,22 +31,27 @@
 		<%= link_to 'Add review', new_pet_review_path(@pet), class:"pink-text text-lighten-2" %>
 		<% if @pet.reviews.any? %>
 			<% @pet.reviews.each do |review| %>
-			<ul>
-
-				<li><%= review.rating %> <br><%= review.comment %></li><br>
-					<% if (current_user.id == @pet.user_id || review.user_id) %>
-						<%= link_to 'Delete Comment',
-						pet_review_path(@pet ,review), method: :delete, class:'btn' %><br>
-						<%= link_to 'Edit Comment', edit_pet_review_path(@pet, review), class: 'btn' %>
-					<%end%>
-			</ul>
+				<div class="col s12 m10 offset-m1">
+			 	  <div class="card">
+			    	<div class="card-title">
+							<%= review.rating %> <br><%= review.comment %>
+							<div class="card-action">
+								<% if (current_user.id == @pet.user_id || review.user_id) %>
+									<%= link_to 'Delete Comment',
+									pet_review_path(@pet ,review), method: :delete, class: 'btn-small #eeeeee grey lighten-3' %>
+									<%= link_to 'Edit Comment', edit_pet_review_path(@pet, review), class: 'btn-small #eeeeee grey lighten-3' %>
+								<%end%>
+							</div>
+						</div>
+					</div>
+				</div>
 			<%end%>
 		<% else %>
 			<p>No reviews yet</p>
 		<% end %>
 
-<%= link_to 'Edit your pet', edit_pet_path(@pet), class:"red-text text-lighten-2" %> ||
-<%= link_to 'Remove your pet', pet_path(@pet), method: :delete, class:"pink-text text-lighten-2" %> ||
-<%= link_to 'All pets', pets_path, class:"pink-text text-lighten-2" %> ||
-<%= link_to 'Home', root_path, class:"pink-text text-lighten-2" %>
 
+<%= link_to 'Edit your pet', edit_pet_path(@pet), class: 'btn-medium #eeeeee grey lighten-3' %> 
+<%= link_to 'Remove your pet', pet_path(@pet), method: :delete, data: {confirm: 'Really Delete?'}, class: 'btn-small #eeeeee grey lighten-3' %> 
+<%= link_to 'All pets', pets_path, class: 'btn-small #eeeeee grey lighten-3' %> 
+<%= link_to 'Home', root_path, class: 'btn-small #eeeeee grey lighten-3' %>
